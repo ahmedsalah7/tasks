@@ -105,6 +105,10 @@ class users extends CI_Controller {
         $this->session->unset_userdata('userData', $sess_array);
         redirect(base_url('users/signIn'));
     }
+    
+    public function profile(){
+        echo 'profile';
+    }
 
 }
 
