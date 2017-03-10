@@ -47,7 +47,8 @@ class users extends CI_Controller {
                 'password' => $this->security->xss_clean($_POST['password']),
                 'birth' => $this->security->xss_clean($_POST['birthdate']),
                 'phone' => $this->security->xss_clean($_POST['phone']),
-                'country' => $this->security->xss_clean($_POST['country'])
+                'country' => $this->security->xss_clean($_POST['country']),
+                'profilePicture' => 'uploads/profileImge/defult.PNG'
             );
 
             $id = $this->userModel->addUser($data);
@@ -109,11 +110,12 @@ class users extends CI_Controller {
 
     public function profile() {
 
-
         if (!isset($this->session->userdata['userData'])) {
             redirect(base_url('users/signIn'));
         }
 
+        $data['errorsProfile'] = $this->session->flashdata('errorsProfile');
+        $data['updated'] = $this->session->flashdata('updated');
         $data['user'] = $this->session->userdata['userData'];
         $data['nav'] = 'partial/_userNav';
         $data['content'] = 'contentsprofile/profile';
@@ -121,37 +123,55 @@ class users extends CI_Controller {
     }
 
     public function updateProfile() {
-//        unset($_POST['confirm_password']);
-//        unset($_POST['update']);
-//        $this->userModel->updateProfile($_POST);
-//        print_r($_POST);
 
+//      start
+        $this->form_validation->set_rules('password', 'password', 'required|matches[conpassword]');
+        $this->form_validation->set_rules('conpassword', 'confirm password', 'required');
+        $this->form_validation->set_rules('birth', 'birth date', 'required|min_length[6]');
+        $this->form_validation->set_rules('phone', 'phone', 'required|exact_length[11]');
+        $this->form_validation->set_rules('country', 'country', 'required|min_length[3]');
 
-
-
-        $config['upload_path'] = base_url('uploads');
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 100;
-        $config['max_width'] = 1024;
-        $config['max_height'] = 768;
-
-
-        if (!$this->upload->do_upload('pic')) {
-            $error = array('error' => $this->upload->display_errors());
-            print_r($error); echo 'error';
+        if ($this->form_validation->run() == FALSE) {
+            $errors = validation_errors();
+            $this->session->set_flashdata('errorsProfile', $errors);
+            redirect(base_url('users/profile'));
         } else {
-            $data = array('update' => $this->upload->data());
-            print_r($data);            echo 'data';
+
+            if (!empty($_FILES['pic']['name'])) {
+
+                $config['upload_path'] = './uploads/profileImge';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = 10000;
+                $config['max_width'] = 1024;
+                $config['max_height'] = 768;
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('pic')) {
+                    $errors = array('error' => $this->upload->display_errors());
+                    $this->session->set_flashdata('errorsProfile', $errors['error']);
+
+                    $pic = $this->userModel->getUserpic($_POST['email']);
+                    $_POST['profilePicture'] = $pic[0]['profilePicture'];
+                } else {
+                    $data = array('upload_data' => $this->upload->data());
+                    $_POST['profilePicture'] = 'uploads/profileImge/' . $data['upload_data']['file_name'];
+                }
+            } else {
+                $pic = $this->userModel->getUserpic($_POST['email']);
+                $_POST['profilePicture'] = $pic[0]['profilePicture'];
+            }
+
+            unset($_POST['conpassword']);
+            unset($_POST['update']);
+
+            $this->userModel->updateProfile($_POST);
+            $this->session->set_userdata('userData', $_POST);
+            $this->session->set_flashdata('updated', 'updated succes');
+            redirect(base_url('users/profile'));
         }
-
-
-
-        print_r($_FILES);
     }
 
-    public function deleteProfile() {
-        echo 'delete';
-    }
+  
 
 }
 

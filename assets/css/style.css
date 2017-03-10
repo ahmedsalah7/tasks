@@ -710,3 +710,8 @@ aside.pushmenu-open { left: 0px; bottom: 0; top: 51px;}
         display: inline-block;
     }
 }
+
+.btn-profile-save{
+    font-size: 18px;
+    width: 50%;
+}

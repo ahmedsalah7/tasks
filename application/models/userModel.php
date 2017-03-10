@@ -24,10 +24,22 @@ class userModel extends CI_Model {
     }
 
     public function updateProfile($data) {
-
-
         $this->db->where('email', $data['email']);
         $this->db->update('users', $data);
+    }
+
+    public function getUserpic($email) {
+        $this->db->select('profilePicture');
+        $this->db->from('users');
+        $this->db->where('email', $email);
+
+        $query = $this->db->get();
+
+        if ($query->num_rows() == 1) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
     }
 
 }

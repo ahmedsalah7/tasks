@@ -25,10 +25,10 @@
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">usernaem</a></li>
-                        <li><a href="#">email</a></li>
+                        <li><a href="#"><?= $user['username'];?></a></li>
+                        <li><a href="#"><?= $user['email'];?></a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">+20-phone</a></li>
+                        <li><a href="#">+20-<?= $user['phone'];?></a></li>
                     </ul>
                 </li>
                 <li>

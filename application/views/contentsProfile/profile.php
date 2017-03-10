@@ -1,4 +1,16 @@
+<?php
+if (!empty($errorsProfile)) {
 
+    echo ' <div class="alert alert-danger"> ';
+    print_r($errorsProfile);
+    echo '</div>';
+} else {
+    echo ' <div class="success alert-success"> ';
+    print_r($updated);
+
+    echo '</div>';
+}
+?>
 
 
 <div>
@@ -12,8 +24,8 @@
                             <form method="post" enctype="multipart/form-data">
 
                                 <div class="col-xs-12 col-sm-4 pull-right text-center">
-                                    <img src="<?= base_url('assets/img/avatar-1.png') ?>" alt="profil-img" class="img-responsive center-block" />
-                                    <input type="file" name="file" id="file" class="inputfile" name="pic" />
+                                    <img src="<?= base_url($user['profilePicture']); ?>" alt="profil-img" class="img-responsive center-block" />
+                                    <input type="file"  id="file" class="inputfile" name="pic" />
                                     <label for="file" class="btn btn-srch btn-profile"> <i class='fa fa-sliders' aria-hidden='true'></i> Change Your Picture</label>
                                 </div>
 
@@ -33,7 +45,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="exampleInputPassword1">Confirm-Password</label><div class="clearfix"></div>
-                                        <input type="password" class="form-control" placeholder="Confirem Password" name="confirm_password"value="<?= $user['password'] ?>">
+                                        <input type="password" class="form-control" placeholder="Confirem Password" name="conpassword" value="<?= $user['password'] ?>">
                                     </div>
                                     <div class="form-group row" >
                                         <label for="exampleInputPassword1">Birth-Date</label><div class="clearfix"></div>
@@ -50,8 +62,7 @@
 
 
                                     <div style="padding:30px 0px 10px 50px ; line-height:44px">
-                                        <button type="submit" name="update" formaction="<?=  base_url('users/updateProfile');?>" value="" class="btn btn-srch btn-profile"  style="margin-right:50px"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Save Sitting</button>
-                                        <button type="submit" name="delete" formaction="<?=  base_url('users/deleteProfile');?>" value="" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i>Delete Account</button>
+                                        <button type="submit" name="update" formaction="<?= base_url('users/updateProfile'); ?>" value="" class="btn btn-srch btn-profile btn-profile-save"  style="margin-right:50px"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Save Sitting</button>
                                     </div>
                                 </div>
 
