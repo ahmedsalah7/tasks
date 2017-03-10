@@ -25,14 +25,14 @@
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="assets/inner.php#/mustDo"><?php echo $_SESSION['username']; ?></a></li>
-                        <li><a href="#"><?php echo $_SESSION['email']; ?></a></li>
+                        <li><a href="#">usernaem</a></li>
+                        <li><a href="#">email</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">+20-<?php echo $_SESSION['phone']; ?></a></li>
+                        <li><a href="#">+20-phone</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#/profile" data-toggle="tooltip" data-placement="bottom" title="Profile Setting"><i class="fa fa-cog fa-lg" aria-hidden="true"></i></a>
+                    <a href="<?= base_url('users/profile');?>" data-toggle="tooltip" data-placement="bottom" title="Profile Setting"><i class="fa fa-cog fa-lg" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->

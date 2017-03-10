@@ -621,7 +621,7 @@ aside.pushmenu-open { left: 0px; bottom: 0; top: 51px;}
 .profile form input
 {
     float: left;
-    width: 60%;
+    width: 90%;
     margin-right: 5%;
     margin-bottom: 5px;
 }
@@ -650,6 +650,27 @@ aside.pushmenu-open { left: 0px; bottom: 0; top: 51px;}
 {
     background-color: #235A8A;
 }
+
+.profile .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.profile .inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+
 
 .sidebar > i
 {

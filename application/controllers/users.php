@@ -90,8 +90,9 @@ class users extends CI_Controller {
             );
             $data = $this->userModel->login($data);
             if ($data) {
-
-                $this->session->set_userdata('userData', $data);
+//                print_r($data[0]);
+//                exit();
+                $this->session->set_userdata('userData', $data[0]);
                 redirect(base_url('task'));
             } else {
 
@@ -102,12 +103,54 @@ class users extends CI_Controller {
     }
 
     public function signOut() {
-        $this->session->unset_userdata('userData', $sess_array);
+        $this->session->unset_userdata('userData');
         redirect(base_url('users/signIn'));
     }
-    
-    public function profile(){
-        echo 'profile';
+
+    public function profile() {
+
+
+        if (!isset($this->session->userdata['userData'])) {
+            redirect(base_url('users/signIn'));
+        }
+
+        $data['user'] = $this->session->userdata['userData'];
+        $data['nav'] = 'partial/_userNav';
+        $data['content'] = 'contentsprofile/profile';
+        $this->load->view('index', $data);
+    }
+
+    public function updateProfile() {
+//        unset($_POST['confirm_password']);
+//        unset($_POST['update']);
+//        $this->userModel->updateProfile($_POST);
+//        print_r($_POST);
+
+
+
+
+        $config['upload_path'] = base_url('uploads');
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 100;
+        $config['max_width'] = 1024;
+        $config['max_height'] = 768;
+
+
+        if (!$this->upload->do_upload('pic')) {
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error); echo 'error';
+        } else {
+            $data = array('update' => $this->upload->data());
+            print_r($data);            echo 'data';
+        }
+
+
+
+        print_r($_FILES);
+    }
+
+    public function deleteProfile() {
+        echo 'delete';
     }
 
 }

@@ -4,7 +4,7 @@ class userModel extends CI_Model {
 
     public function addUser($data) {
         $this->db->insert('users', $data);
-         return $this->db->insert_id();
+        return $this->db->insert_id();
     }
 
     public function login($data) {
@@ -17,10 +17,17 @@ class userModel extends CI_Model {
         $query = $this->db->get();
 
         if ($query->num_rows() == 1) {
-            return $query->result();
+            return $query->result_array();
         } else {
             return false;
         }
+    }
+
+    public function updateProfile($data) {
+
+
+        $this->db->where('email', $data['email']);
+        $this->db->update('users', $data);
     }
 
 }

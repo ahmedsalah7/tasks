@@ -2,7 +2,7 @@
 <!--
 start side bar
 =======================-->
-<div class="container-ffluid">
+<div class="container-fluid">
     <div class="row">
         <aside class="col-xs-6 col-sm-3 col-md-2 sidebar">
             <i class="fa fa-angle-double-right fa-3x" aria-hidden="true"></i>
