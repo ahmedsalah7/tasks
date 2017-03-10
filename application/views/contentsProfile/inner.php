@@ -16,7 +16,7 @@ start side bar
             </form> 
 
             <ul class="nav nav-sidebar">
-                <li ><a href="<?= base_url('task/mustDo'); ?>"><i class="fa fa-table"></i>Must Do</a></li>
+                <li class="active"><a href="<?= base_url('task/mustDo'); ?>"><i class="fa fa-table"></i>Must Do</a></li>
                 <li ><a href="<?= base_url('task/done'); ?>" ><i class="fa fa-check-square-o"></i>Done</a></li>
                 <li ><a href="<?= base_url('task/trash'); ?>" ><i class="fa fa-trash-o"></i>in Trash</a></li>
             </ul>
