@@ -15,7 +15,11 @@
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell fa-lg"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Ahmed put new carde</a></li>
+                        <li>
+                            <a href="#">Ahmed invint to frind 
+                            <button class="btn btn-default btn-sm" type="button" style="background-color: #4cd4b9;color:white">add</button>
+                            </a> 
+                        </li>
                         <li><a href="#">Date of carde-1 has expired</a></li>
                         <li><a href="#">Eslam has added new member</a></li>
                         <li role="separator" class="divider"></li>

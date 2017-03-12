@@ -10,4 +10,37 @@ $(document).ready(function () {
         $('.fa-angle-double-right').css('font-size', '3em');
         $('.sidebar').toggleClass('pushmenu-open');
     });
+
+    $('.main > .edit').click(function () {
+        // $(this).toggleClass('fa-angle-double-right','fa-window-close-o',1000, "easeInOutQuad");
+        $(this).toggleClass('fa fa-window-close-o');
+        /*if ($('.main .description').attr('readonly')) {
+	        $('.main .description').removeAttr('readonly');
+	    } else {
+	        $('.main .description').attr('readonly=""');
+	    }*/
+	    $('.main .description').attr('readonly', function (_, attr) { return !attr });
+    });
+
+    $('.main > .edit-2').click(function () {
+        // $(this).toggleClass('fa-angle-double-right','fa-window-close-o',1000, "easeInOutQuad");
+        $(this).toggleClass('fa fa-window-close-o');
+        /*if ($('.main .description').attr('readonly')) {
+	        $('.main .description').removeAttr('readonly');
+	    } else {
+	        $('.main .description').attr('readonly=""');
+	    }*/
+	    $('.main .description-2').attr('readonly', function (_, attr) { return !attr });
+    });
+
+    $('.main > .edit-3').click(function () {
+        // $(this).toggleClass('fa-angle-double-right','fa-window-close-o',1000, "easeInOutQuad");
+        $(this).toggleClass('fa fa-window-close-o');
+        /*if ($('.main .description').attr('readonly')) {
+	        $('.main .description').removeAttr('readonly');
+	    } else {
+	        $('.main .description').attr('readonly=""');
+	    }*/
+	    $('.main .description-3').attr('readonly', function (_, attr) { return !attr });
+    });
 });

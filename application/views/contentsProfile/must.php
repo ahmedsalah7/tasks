@@ -81,13 +81,13 @@
                                   <textarea class="form-control" rows="5" id="comment"></textarea>
                                 </div>
                             </div>
-                            <div class="main">
-                                <!-- <a href="#" class="btn pull-right edit" >edit</a>  -->
+                            <!-- <div class="main">
+                                <!-- <a href="#" class="btn pull-right edit" >edit</a>  --
                                 <h4>Links</h4>
                                 <div class="form-group">
                                   <textarea class="form-control" rows="5" id="comment"></textarea>
                                 </div>
-                            </div>
+                            </div> -->
                             <h4>Illustrating Images</h4>
                             <!-- <form action="" method="" > -->
                                 <div class="input-group space">
@@ -269,16 +269,28 @@
                         <h3>Description <small>general</small></h3>
                         <div class="well well-lg">
                             <div class="main">
-                                <a href="#" class="btn btn-prima pull-right edit" data-toggle="modal" data-target="#mainDisc">edit</a> 
+                                <a href="#" class="btn btn-prima pull-right edit">edit</a> 
                                 <h4>Main</h4>
-                                <p class="space">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illum corporis, voluptatum nisi vitae, praesentium fuga quisquam! Rem, fugiat! Ipsum deleniti, repellat? Sint, nobis, aperiam.</p> 
+                                <!-- <p class="space">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illum corporis, voluptatum nisi vitae, praesentium fuga quisquam! Rem, fugiat! Ipsum deleniti, repellat? Sint, nobis, aperiam.</p>  -->
+                                <div class="form-group">
+                                  <textarea readonly="false" class="form-control description" rows="5" id="comment">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illum corporis, voluptatum nisi vitae, praesentium fuga quisquam! Rem, fugiat! Ipsum deleniti, repellat? Sint, nobis, aperiam.
+                                  </textarea>
+                                </div>
                             </div>
                             <div class="main">
-                                <a href="#" class="btn pull-right edit" data-toggle="modal" data-target="#mainDisc">edit</a> 
+                                <a href="#" class="btn pull-right edit-2">edit</a> 
                                 <h4>Links</h4>
-                                <p><a href="#">https://www.youtube.com/</a></p>
+                                <!-- <p><a href="#">https://www.youtube.com/</a></p>
                                 <p><a href="#">https://www.article19.org/</a></p>
-                                <p class="space"><a href="#">https://www.trello.com/</a></p>
+                                <p class="space"><a href="#">https://www.trello.com/</a></p> -->
+                                <div class="form-group">
+                                  <textarea readonly class="form-control description-2" rows="5" id="comment">
+https://www.youtube.com/
+https://www.article19.org/
+https://www.trello.com/
+                                  </textarea>
+                                </div>
                             </div>
                             <h4>Illustrating Images</h4>
                             <form action="" method="" >
@@ -296,9 +308,14 @@
                                 <img src="http://il2.picdn.net/shutterstock/videos/8535565/thumb/9.jpg">
                             </a>
                             <div class="main">
-                                <a href="#" class="btn btn-prima pull-right edit" data-toggle="modal" data-target="#mainDisc">edit</a> 
+                                <a href="#" class="btn btn-prima pull-right edit-3">edit</a> 
                                 <h4>Final Notes</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit similique earum, perferendis ipsa laboriosam incidunt molestias esse ratione fuga. Dolorem impedit, pariatur! Laborum, beatae!</p>
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit similique earum, perferendis ipsa laboriosam incidunt molestias esse ratione fuga. Dolorem impedit, pariatur! Laborum, beatae!</p> -->
+                                <div class="form-group">
+                                  <textarea readonly class="form-control description-3" rows="5" id="comment">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit similique earum, perferendis ipsa laboriosam incidunt molestias esse ratione fuga. Dolorem impedit, pariatur! Laborum, beatae!
+                                  </textarea>
+                                </div>
                             </div>
                         </div><!--  end of well-one -->
                         <h3>Attachments</h3>
@@ -333,14 +350,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" aria-label="...">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment <!-- <span class="caret"></span> --></button>
                             </div><!-- /btn-group -->
                         </div><!-- /input-group -->
                         <div class="media">
