@@ -1,8 +1,11 @@
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
-
 });
 $(document).ready(function () {
+    /*$("#myRange").click(function(){
+    var x = $("#myRange").value;
+    $("#demo").innerHTML = x;
+    });*/
     $('.sidebar > i').click(function () {
         // $(this).toggleClass('fa-angle-double-right','fa-window-close-o',1000, "easeInOutQuad");
         $(this).toggleClass('fa-angle-double-right').toggleClass('fa-window-close-o');

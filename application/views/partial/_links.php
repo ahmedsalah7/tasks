@@ -8,4 +8,5 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/font-awesome.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/A-style.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/style.css'); ?>">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/range.css'); ?>">
 

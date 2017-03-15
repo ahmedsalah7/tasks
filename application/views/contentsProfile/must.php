@@ -1,5 +1,10 @@
 
-
+<script type="text/javascript">
+    function range() {
+    var x = document.getElementById("myRange").value;
+    document.getElementById("demo").innerHTML = x + '%';
+}
+</script>
 
 <h1 style="color: grey; margin-bottom: 40px; border-bottom: 2px solid #b5b5b5; padding-bottom: 21px;"><i class="fa fa-tasks" aria-hidden="true"></i> Tasks you must Finish...</h1>
 <div class="row">
@@ -243,7 +248,9 @@
                                     <img class="height-30 img-circle" src="https://cdn3.iconfinder.com/data/icons/digital-marketing/512/user_business_person_businessman_man_flat_icon-512.png">
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="progress height-17">
+                                <input type="range" id="myRange" value="0" onclick="range()">
+                                <p id="demo">0%</p>
+                                    <!-- <div class="progress height-17">
                                         <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                             <span class="sr-only">80% Complete (danger)</span>
                                         </div>
@@ -258,7 +265,7 @@
                                         <div class="progress-bar progress-bar-info" style="width: 25%">
                                             <span class="sr-only">10% Complete (danger)</span>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div><!-- the end of panal-body -->
                         </div><!-- the end of panal-model -->
