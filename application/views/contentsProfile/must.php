@@ -272,7 +272,7 @@
                     </div> <!-- end of col-12 -->
                 </div><!-- end of the first row -->
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <h3>Description <small>general</small></h3>
                         <div class="well well-lg">
                             <div class="main">
@@ -400,20 +400,79 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit
                             </div><!-- end of the big media body -->
                         </div><!-- end of the big media -->
                     </div><!-- end of col-9 -->
-                    <div class="col-md-2 col-md-offset-1">
+                    <div class="col-md-4 col-md-offset-0">
                         <h4 class="text-center">Add</h4>
-                        <div class="btn-group-vertical space" role="group" aria-label="...">
-                            <a class="btn btn-default"><i class="fa fa-user-plus" aria-hidden="true"></i>  Members</a>
-                            <!-- <a class="btn btn-default"><i class="fa fa-tags" aria-hidden="true"></i>  Description</a> -->
-                            <a class="btn btn-default"><i class="fa fa-file-image-o" aria-hidden="true"></i> Attatchments</a>
-                            <!-- <a class="btn btn-default"><i class="fa fa-list-ol" aria-hidden="true"></i>  CheckList</a> -->
-                            <a class="btn btn-default"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>  Due Date</a>
+                        <div class="panel-group" id="accordion">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Members</a>
+                              </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                              <div class="panel-body">
+                                  <form class="form-inline" role="search">
+                                    <div class="input-group col-xs-12">
+                                        <input width="100%" type="text" class="form-control" placeholder="Search..." />
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-srch">Add</button>
+                                        </span>
+                                    </div>
+                                </form> 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Attatchments</a>
+                              </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  <form action="" method="" >
+                                    <div class="input-group space">
+                                        <input type="file" class="form-control" aria-label="...">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">Upload</button>
+                                        </div>
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Due Date</a>
+                              </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                <form class="form-inline" role="search">
+                                    <div class="input-group col-xs-12">
+                                        <input width="100%" type="date" class="form-control" placeholder="Date" />
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-srch">Add</button>
+                                        </span>
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
                         </div>
+                        <!-- <div class="btn-group-vertical space" role="group" aria-label="...">
+                            <a class="btn btn-default"><i class="fa fa-user-plus" aria-hidden="true"></i>  Members</a>
+                            <a class="btn btn-default"><i class="fa fa-tags" aria-hidden="true"></i>  Description</a> 
+                            <a class="btn btn-default"><i class="fa fa-file-image-o" aria-hidden="true"></i> Attatchments</a>
+                            <a class="btn btn-default"><i class="fa fa-list-ol" aria-hidden="true"></i>  CheckList</a> 
+                            <a class="btn btn-default"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>  Due Date</a>
+                        </div> -->
                         <!-- <div class="btn-group-vertical" role="group" aria-label="...">
                             <a class="btn btn-default"><i class="fa fa-files-o" aria-hidden="true"></i>  Copy</a>
                             <a class="btn btn-default"><i class="fa fa-share-alt" aria-hidden="true"></i>  Share</a>
                             <a class="btn btn-default"><i class="fa fa-check" aria-hidden="true"></i> Subscribe </a>
-                        </div> -->
+                        </div>
                     </div><!-- end of col-2 -->
                 </div><!-- end of the second row -->
             </div><!-- end of model-body -->
