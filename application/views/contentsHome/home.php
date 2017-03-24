@@ -1,7 +1,4 @@
-<?php
- $this->lang->load('home', $this->session->userdata['lang']);   
 
- ?>
 <div id="carousel-example-generic" class="carousel slide carousel-1" data-ride="carousel" data-interval="2000">
     <!-- Indicators -->
     <ol class="carousel-indicators">

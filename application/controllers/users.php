@@ -4,20 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class users extends CI_Controller {
 
+//    i have i problem in this functin that he shoulde return to the same function he come form it 
+//    not return all  to home i will fix it later 
     public function lang() {
         if (isset($_POST['ar'])) {
+
             $this->session->set_userdata('lang', 'arabic');
-            redirect($_SERVER['HTTP_REFERER']);
+            redirect(base_url('users'));
         }
         if (isset($_POST['en'])) {
-            echo 'english';
             $this->session->set_userdata('lang', 'english');
-            redirect($_SERVER['HTTP_REFERER']);
+            redirect(base_url('users'));
         }
     }
 
     public function index() {
-        $this->session->set_userdata('lang', 'english');
         $data['nav'] = 'partial/_visitorNav';
         $data['content'] = 'contentsHome/home';
         $this->load->view('index', $data);

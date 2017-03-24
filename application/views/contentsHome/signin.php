@@ -1,6 +1,3 @@
-<?php
-$this->lang->load('signin', $this->session->userdata['lang']);
-?>
 
 <div class="container">
     <div class="row sign">

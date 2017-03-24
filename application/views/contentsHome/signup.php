@@ -1,6 +1,4 @@
-<?php
-$this->lang->load('signup', $this->session->userdata['lang']);
-?>
+
 
 <div class="container">
     <div class="row">

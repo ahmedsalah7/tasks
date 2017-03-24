@@ -1,3 +1,11 @@
+<?php
+if ($this->session->has_userdata('lang')) {
+    $this->lang->load('home', $this->session->userdata['lang']);
+} else {
+    $this->lang->load('home');
+}
+?>
+
 <!DOCTYPE html>
 <html >
 

@@ -1,4 +1,5 @@
 <?php
+
 // start slider
 // =============================
 $lang['slider-description-1'] = 'Tasks is the best tool that allowed you to manage any project, and share your tasks with anybody';
@@ -50,8 +51,6 @@ et dolorerserss eerhfre mag.';
 
 // start about 
 // ======================
-
-
 // start about us  
 // ================================
 
@@ -80,7 +79,7 @@ $lang['testimonial-opinion-1'] = 'we’re able to provide our food retailers wit
                         that helps them stay competitive, improve and grow their existing business, delight existing customers, and attract new ones.';
 
 $lang['testimonial-name-2'] = 'Eslam Ayman';
-$lang['testimonial-opinion-2'] =' we’re able to provide our food retailers with a valuable technology platform 
+$lang['testimonial-opinion-2'] = ' we’re able to provide our food retailers with a valuable technology platform 
                         that helps them stay competitive, improve and grow their existing business, delight existing customers, and attract new ones.';
 
 $lang['testimonial-name-3'] = 'Eslam Ayman';
@@ -90,18 +89,39 @@ $lang['testimonial-opinion-3'] = ' we’re able to provide our food retailers wi
 
 // start CONTACT-ME
 // =======================================
-$lang['contactMe-title'] = 'CONTACT ME';                       
-$lang['contactMe-description'] = 'CodeIgniter is an Application Development Framework - a toolkit - for people who build web sites using <br>PHP. Its goal is to enable you to develop projects much faster than you could if you were writing code from scratch, <br>by providing a rich set of libraries for commonly needed tasks,';                       
+$lang['contactMe-title'] = 'CONTACT ME';
+$lang['contactMe-description'] = 'CodeIgniter is an Application Development Framework - a toolkit - for people who build web sites using <br>PHP. Its goal is to enable you to develop projects much faster than you could if you were writing code from scratch, <br>by providing a rich set of libraries for commonly needed tasks,';
 
 
-$lang['contactMe-formName'] = 'Name';             
-$lang['contactMe-formEmail'] = 'Email address';             
-$lang['contactMe-formMassage'] = 'Massage';             
-$lang['contactMe-formsubmit'] = 'Send';   
+$lang['contactMe-formName'] = 'Name';
+$lang['contactMe-formEmail'] = 'Email address';
+$lang['contactMe-formMassage'] = 'Massage';
+$lang['contactMe-formsubmit'] = 'Send';
 
 // copyright
 // ====================
 
-$lang['copyright'] ='© All rights are resieved for TASKS 2016';
+$lang['copyright'] = '© All rights are resieved for TASKS 2016';
 
+
+/* start signin
+ * ==================================================================================/ */
+$lang['Sign_in'] = ' Sign in ';
+$lang['email_address'] = ' Email address ';
+$lang['Password'] = ' Password ';
+
+
+/* start signin
+ * ==================================================================================/ */
+
+$lang['Sign_Up'] = ' Sign Up ';
+$lang['Username'] = '  Username ';
+$lang['Email'] = ' Email ';
+$lang['Password'] = ' Password ';
+$lang['Confirm_password'] = ' Confirm password ';
+$lang['Birth_Date'] = ' Birth Date ';
+$lang['Phone_Number'] = ' Phone Number ';
+$lang['Country'] = ' Country ';
+$lang['police'] = ' Please agree to our policy ';
+$lang['type'] = ' Type here.. ';
 ?>
