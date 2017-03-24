@@ -5,19 +5,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class users extends CI_Controller {
 
     public function lang() {
-//        print_r($_POST); exit();
         if (isset($_POST['ar'])) {
             $this->session->set_userdata('lang', 'arabic');
-          redirect($_SERVER['HTTP_REFERER']);
+            redirect($_SERVER['HTTP_REFERER']);
         }
         if (isset($_POST['en'])) {
             echo 'english';
             $this->session->set_userdata('lang', 'english');
-       redirect($_SERVER['HTTP_REFERER']); 
+            redirect($_SERVER['HTTP_REFERER']);
         }
     }
 
     public function index() {
+        $this->session->set_userdata('lang', 'english');
         $data['nav'] = 'partial/_visitorNav';
         $data['content'] = 'contentsHome/home';
         $this->load->view('index', $data);
@@ -69,7 +69,7 @@ class users extends CI_Controller {
     }
 
     public function addUser() {
-        
+
         $this->form_validation->set_rules('username', 'user name', 'required|min_length[7]|max_length[20]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'password', 'required|matches[confirm_password]');
