@@ -61,8 +61,7 @@ if ( ! function_exists('lang'))
 	 * @param	array	$attributes	Any additional HTML attributes
 	 * @return	string
 	 */
-	function lang($line, $for = '', $attributes = array())
-	{
+	function lang($line, $for = '', $attributes = array()){
 		$line = get_instance()->lang->line($line);
 
 		if ($for !== '')

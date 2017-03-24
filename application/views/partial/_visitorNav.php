@@ -7,11 +7,19 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="<?= base_url('users'); ?>">Tasks</a>
+
+            <form name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
+
+                <button type="submit" class=""   name="ar">عربي</button>
+                <button type="submit" class=""  name="en">english</button>
+            </form>    
+
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="<?= base_url('users/signIn'); ?>">Sign IN</a></li>
                 <li><a href="<?= base_url('users/signUp'); ?>">Sign Up</a></li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

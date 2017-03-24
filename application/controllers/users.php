@@ -4,6 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class users extends CI_Controller {
 
+    public function lang() {
+//        print_r($_POST); exit();
+        if (isset($_POST['ar'])) {
+            $this->session->set_userdata('lang', 'arabic');
+          redirect($_SERVER['HTTP_REFERER']);
+        }
+        if (isset($_POST['en'])) {
+            echo 'english';
+            $this->session->set_userdata('lang', 'english');
+       redirect($_SERVER['HTTP_REFERER']); 
+        }
+    }
+
     public function index() {
         $data['nav'] = 'partial/_visitorNav';
         $data['content'] = 'contentsHome/home';
@@ -16,15 +29,47 @@ class users extends CI_Controller {
             redirect(base_url('task'));
         }
 
+        if ($this->session->has_userdata('invalidData')) {
+            $data['invalidData'] = $this->session->flashdata('invalidData');
+        }
         $errors = $this->session->flashdata('errorsSignUP');
         $data['errors'] = $errors;
         $data['nav'] = 'partial/_visitorNav';
         $data['content'] = 'contentsHome/signup';
+
+        /* start captcha */
+        $vals = array(
+            'img_path' => './captcha/',
+            'img_url' => base_url() . '/captcha/',
+            'img_width' => 200,
+            'img_height' => '50',
+            'expiration' => 7200,
+            'word_length' => 8,
+            'font_size' => 96,
+            'img_id' => 'Imageid',
+            'pool' => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                // White background and border, black text and red grid
+//            'colors' => array(
+//                'background' => array(255, 255, 255),
+//                'border' => array(255, 255, 255),
+//                'text' => array(0, 0, 0),
+//                'grid' => array(255, 40, 40)
+//            )
+        );
+
+        $cap = create_captcha($vals);
+        $data['cap'] = $cap;
+//        to cleare session before us6e it 
+        $this->session->unset_userdata('captchaWord');
+        $this->session->set_userdata('captchaWord', $cap['word']);
+        /* end captcha */
+
+
         $this->load->view('index', $data);
     }
 
     public function addUser() {
-
+        
         $this->form_validation->set_rules('username', 'user name', 'required|min_length[7]|max_length[20]');
         $this->form_validation->set_rules('email', 'email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'password', 'required|matches[confirm_password]');
@@ -33,13 +78,25 @@ class users extends CI_Controller {
         $this->form_validation->set_rules('phone', 'phone', 'required|exact_length[11]');
         $this->form_validation->set_rules('country', 'country', 'required|min_length[3]');
         $this->form_validation->set_rules('agree', 'agree', 'required');
+        $this->form_validation->set_rules('captcha', 'captcha', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $errors = validation_errors();
 
             $this->session->set_flashdata('errorsSignUP', $errors);
+            $this->session->set_flashdata('invalidData', $_POST);
             redirect(base_url('users/signUp'));
         } else {
+
+            $word = $this->session->userdata('captchaWord');
+
+            if ($_POST['captcha'] != $word) {
+
+                $errors = 'invalide captcha';
+
+                $this->session->set_flashdata('errorsSignUP', $errors);
+                redirect(base_url('users/signUp'));
+            }
 
             $data = array(
                 'username' => $this->security->xss_clean($_POST['username']),
@@ -67,7 +124,9 @@ class users extends CI_Controller {
 
         $data['errorsSignIn'] = $this->session->flashdata('errorsSignIn');
         $data['errorsLogin'] = $this->session->flashdata('errorsLogin');
-
+        if ($this->session->has_userdata('invalidData')) {
+            $data['invalidData'] = $this->session->flashdata('invalidData');
+        }
         $data['nav'] = 'partial/_visitorNav';
         $data['content'] = 'contentsHome/signin';
         $this->load->view('index', $data);
@@ -82,6 +141,7 @@ class users extends CI_Controller {
             $errors = validation_errors();
 
             $this->session->set_flashdata('errorsSignIn', $errors);
+            $this->session->set_flashdata('invalidData', $_POST);
             redirect(base_url('users/signIn'));
         } else {
 
@@ -170,8 +230,6 @@ class users extends CI_Controller {
             redirect(base_url('users/profile'));
         }
     }
-
-  
 
 }
 
