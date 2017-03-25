@@ -8,11 +8,11 @@
             </button>
             <a class="navbar-brand" href="<?= base_url('users'); ?>">Tasks</a>
 
-            <form name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
+            <!-- <form name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
 
                 <button type="submit" class=""   name="ar">عربي</button>
                 <button type="submit" class=""  name="en">english</button>
-            </form>    
+            </form>    --> 
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
