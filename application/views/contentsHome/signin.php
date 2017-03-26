@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row sign">
             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <img src="<?= base_url('assets/img/ribbon.png'); ?>" alt="logo" style="margin-bottom: -22px; height: 220px;"
+                <img src="<?= base_url('assets/img/ribbon.png'); ?>" alt="logo" style="height: 140px;width: 250px;margin: auto;margin-bottom: -16px;"
                  class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 img-responsive ribbon">
                 <fieldset>
                 

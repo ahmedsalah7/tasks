@@ -32,7 +32,7 @@
                   <label for="inputEmail3" class="col-sm-2 col-form-label"><?= lang('Username');?></label>
                   <div class="col-sm-10">
                     <input  type="text" class="form-control" id="username1"
-                            name="username" placeholder="<?= lang('Username');?>" autofocus
+                            name="username" placeholder="spiderman" autofocus
                             value="<?php
                             if (isset($invalidData)) {
                                 echo $invalidData['username'];
@@ -45,7 +45,7 @@
                   <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Email');?></label>
                   <div class="col-sm-10">
                     <input  type="text" class="form-control" id="email1" 
-                                        name="email" placeholder="<?= lang('Email');?>"
+                                        name="email" placeholder="example@example.com"
                                         value="<?php
                                         if (isset($invalidData)) {
                                             echo $invalidData['email'];
@@ -87,7 +87,7 @@
                   <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Phone_Number');?></label>
                   <div class="col-sm-10">
                     <input  type="number" class="form-control" id="Phone"
-                                        name="phone" placeholder="<?= lang('Phone_Number');?>"
+                                        name="phone" placeholder="0123456789"
                                         value="<?php
                                         if (isset($invalidData)) {
                                             echo $invalidData['phone'];
@@ -100,7 +100,7 @@
                   <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Country');?></label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="Country" 
-                                       name="country" placeholder="<?= lang('Country');?>"
+                                       name="country" placeholder="England"
                                        value="<?php
                                        if (isset($invalidData)) {
                                            echo $invalidData['country'];
