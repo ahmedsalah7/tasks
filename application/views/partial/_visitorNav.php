@@ -20,6 +20,38 @@
                 <li class="active"><a href="<?= base_url('users/signIn'); ?>">Sign IN</a></li>
                 <li><a href="<?= base_url('users/signUp'); ?>">Sign Up</a></li>
                 <li class="dropdown">
+                    <a style="padding: 10px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    English <img src="<?= base_url('assets/img/english.jpg'); ?>" class="img-responsive" style="display:inline-block;width:50px;">
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">English 
+                            <form style="display: inline;" name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
+                                    <img src="<?= base_url('assets/img/english.jpg'); ?>" class="img-responsive" style="display:inline-block;width:50px; margin-left: 60px;">
+                                    <button name="en" class="btn btn-default btn-sm" type="submit" style="position: absolute;left: 0px;width: 200px;height: 35px;opacity: 0;" align="right">
+                                    </button>
+                            </form>
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="#">Arabic 
+                            <form style="display: inline;" name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
+    <img src="<?= base_url('assets/img/arabic.png'); ?>" class="img-responsive" style="display:inline-block;width:50px; margin-left: 65px;margin-right: 35px;">
+    <button name="ar" class="btn btn-default btn-sm" type="submit" style="position: absolute;left: 0px;width: 200px;height: 35px;opacity: 0;" align="right">
+    </button>
+                                    <!-- <button name="ar" class="btn btn-default btn-sm" type="submit" style="width:50px; padding: 0px; margin-left: 106px;" align="right">
+                                        <img src="<?= base_url('assets/img/arabic.png'); ?>" class="img-responsive">
+                                    </button> -->
+                            </form>
+                            </a> 
+                        </li>
+                        <!-- <li><a href="#">Eslam has added new member</a></li> -->
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">See More ...</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe fa-lg"></i></a>
                     <ul class="dropdown-menu">
                             <li>
@@ -39,15 +71,15 @@
 </button>
                                         <!-- <button name="ar" class="btn btn-default btn-sm" type="submit" style="width:50px; padding: 0px; margin-left: 106px;" align="right">
                                             <img src="<?= base_url('assets/img/arabic.png'); ?>" class="img-responsive">
-                                        </button> -->
+                                        </button> --
                                 </form>
                                 </a> 
                             </li>
-                            <!-- <li><a href="#">Eslam has added new member</a></li> -->
+                            <!-- <li><a href="#">Eslam has added new member</a></li> --
                             <li role="separator" class="divider"></li>
                             <li><a href="#">See More ...</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
