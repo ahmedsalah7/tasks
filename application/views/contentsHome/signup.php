@@ -29,8 +29,8 @@
               <form class="container-fluid" method="post" action="<?= base_url('users/addUser'); ?>">
 
                 <div class="form-group row">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label"><?= lang('Username');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label"><?= lang('Username');?></label>
+                  <div class="col-sm-9">
                     <input  type="text" class="form-control" id="username1"
                             name="username" placeholder="spiderman" autofocus
                             value="<?php
@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Email');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Email');?></label>
+                  <div class="col-sm-9">
                     <input  type="text" class="form-control" id="email1" 
                                         name="email" placeholder="example@example.com"
                                         value="<?php
@@ -55,24 +55,24 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Password');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Password');?></label>
+                  <div class="col-sm-9">
                       <input  type="password" class="form-control" id="password1"
                                             name="password" placeholder="<?= lang('Password');?>">
                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Confirm_password');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Confirm_password');?></label>
+                  <div class="col-sm-9">
                     <input  type="password" class="form-control" id="confirm_password"
                                      name="confirm_password" placeholder="<?= lang('Confirm_password');?>"/>
                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Birth_Date');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Birth_Date');?></label>
+                  <div class="col-sm-9">
                     <input type="date" class="form-control" id="Birth" 
                                        name="birthdate" placeholder="<?= lang('Birth_Date');?>"
                                        value="<?php
@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Phone_Number');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Phone_Number');?></label>
+                  <div class="col-sm-9">
                     <input  type="number" class="form-control" id="Phone"
                                         name="phone" placeholder="0123456789"
                                         value="<?php
@@ -97,8 +97,8 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Country');?></label>
-                  <div class="col-sm-10">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Country');?></label>
+                  <div class="col-sm-9">
                     <input type="text" class="form-control" id="Country" 
                                        name="country" placeholder="England"
                                        value="<?php

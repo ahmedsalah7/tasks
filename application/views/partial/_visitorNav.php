@@ -25,8 +25,8 @@
                             <li>
                                 <a href="#">English 
                                 <form style="display: inline;" name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
-                                        <button name="en" class="btn btn-default btn-sm" type="submit" style="width:50px; padding: 0px; margin-left: 100px;" align="right">
-                                            <img src="<?= base_url('assets/img/english.jpg'); ?>" class="img-responsive">
+                                        <img src="<?= base_url('assets/img/english.jpg'); ?>" class="img-responsive" style="display:inline-block;width:50px; margin-left: 60px;">
+                                        <button name="en" class="btn btn-default btn-sm" type="submit" style="position: absolute;left: 0px;width: 200px;height: 35px;opacity: 0;" align="right">
                                         </button>
                                 </form>
                                 </a> 
@@ -34,9 +34,12 @@
                             <li>
                                 <a href="#">Arabic 
                                 <form style="display: inline;" name="lang" action=" <?= base_url('users/lang') ?>" method="POST">
-                                        <button name="ar" class="btn btn-default btn-sm" type="submit" style="width:50px; padding: 0px; margin-left: 106px;" align="right">
+<img src="<?= base_url('assets/img/arabic.png'); ?>" class="img-responsive" style="display:inline-block;width:50px; margin-left: 65px;margin-right: 35px;">
+<button name="ar" class="btn btn-default btn-sm" type="submit" style="position: absolute;left: 0px;width: 240px;height: 35px;opacity: 0;" align="right">
+</button>
+                                        <!-- <button name="ar" class="btn btn-default btn-sm" type="submit" style="width:50px; padding: 0px; margin-left: 106px;" align="right">
                                             <img src="<?= base_url('assets/img/arabic.png'); ?>" class="img-responsive">
-                                        </button>
+                                        </button> -->
                                 </form>
                                 </a> 
                             </li>

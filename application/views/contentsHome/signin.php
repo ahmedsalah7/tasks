@@ -41,8 +41,8 @@
 
                   <form class="container-fluid" method="post" action="<?= base_url('users/login'); ?>">
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                      <div class="col-sm-10">
+                      <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
+                      <div class="col-sm-9">
                         <input name="email" type="text" class="form-control" 
                                    id="exampleInputEmail1" placeholder="example@example.com" autofocus
                                    value="<?php if (isset($invalidData)) {
@@ -51,8 +51,8 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputPassword3" class="col-sm-2 col-form-label"><?= lang('Password');?></label>
-                      <div class="col-sm-10">
+                      <label for="inputPassword3" class="col-sm-3 col-form-label"><?= lang('Password');?></label>
+                      <div class="col-sm-9">
                         <input  name="password" type="password" class="form-control"
                                     id="exampleInputPassword1" placeholder="<?= lang('Password');?>"
                                     value="<?php if (isset($invalidData)) {
