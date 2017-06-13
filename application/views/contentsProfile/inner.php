@@ -21,11 +21,7 @@ start side bar
                 <li ><a href="<?= base_url('task/trash'); ?>" ><i class="fa fa-trash-o"></i>in Trash</a></li>
             </ul>
 
-            <ul class="nav nav-sidebar">
-                <li ><a href="<?= base_url('task/members'); ?>" ><i class="fa fa-users"></i>Members</a></li>
-                <li ><a href="<?= base_url('task/comments'); ?>" ><i class="fa fa-comments-o"></i>Comments</a></li>
-                <li ><a href="<?= base_url('task/chat'); ?>" ><i class="fa fa-envelope-o"></i>Chat</a></li>
-            </ul>
+
 
             <div class="ftr T-FOOTER text-center">
                 <div id="T-a">

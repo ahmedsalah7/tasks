@@ -13,6 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | is made regarding whether you intend to use it.  This file lets
 | you globally define which systems you would like loaded with every
 | request.
+ * 
+ * 
 |
 | -------------------------------------------------------------------
 | Instructions
@@ -132,4 +134,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('userModel');
+$autoload['model'] = array('UserModel','TaskModel');

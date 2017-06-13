@@ -124,4 +124,10 @@ $lang['Phone_Number'] = ' Phone Number ';
 $lang['Country'] = ' Country ';
 $lang['police'] = ' Please agree to our policy ';
 $lang['type'] = ' Type here.. ';
+
+//===========================
+//switch lang dropdown from navbar
+
+$lang['word'] = 'English';
+$lang['image'] = 'assets/img/english.jpg';
 ?>

@@ -1,3 +1,11 @@
+<?php
+if ($this->session->has_userdata('lang')) {
+    $this->lang->load('home', $this->session->userdata['lang']);
+} else {
+    $this->lang->load('home');
+}
+?>
+
 <nav class="navbar navbar-inverse nav-color navbar-fixed-top" id="T-N" >
     <div class="container-fluid">
         <div class="navbar-header">
@@ -21,7 +29,7 @@
                 <li><a href="<?= base_url('users/signUp'); ?>">Sign Up</a></li>
                 <li class="dropdown">
                     <a style="padding: 10px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    English <img src="<?= base_url('assets/img/english.jpg'); ?>" class="img-responsive" style="display:inline-block;width:50px;">
+                    <?= lang('word'); ?> <img src="<?= base_url(lang('image')); ?>" class="img-responsive" style="display:inline-block;width:50px;">
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

@@ -1,6 +1,6 @@
 <?php
 
-class userModel extends CI_Model {
+class UserModel extends CI_Model {
 
     public function addUser($data) {
         $this->db->insert('users', $data);
@@ -41,5 +41,6 @@ class userModel extends CI_Model {
             return false;
         }
     }
+    
 
 }

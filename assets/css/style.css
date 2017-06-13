@@ -608,6 +608,7 @@ aside.pushmenu-open { left: 0px; bottom: 0; top: 51px;}
 }
 .content .container .admin-img
 {
+    width: 70px;
     height: 70px;
     margin-top:-40px;
     position: relative;

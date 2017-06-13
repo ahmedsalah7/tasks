@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class users extends CI_Controller {
+class Users extends CI_Controller {
 
 //    i have i problem in this functin that he shoulde return to the same function he come form it 
 //    not return all  to home i will fix it later 
@@ -10,11 +10,11 @@ class users extends CI_Controller {
         if (isset($_POST['ar'])) {
 
             $this->session->set_userdata('lang', 'arabic');
-            redirect(base_url('users'));
+            redirect(base_url('Users'));
         }
         if (isset($_POST['en'])) {
             $this->session->set_userdata('lang', 'english');
-            redirect(base_url('users'));
+            redirect(base_url('Users'));
         }
     }
 
@@ -27,7 +27,7 @@ class users extends CI_Controller {
     public function signUp() {
 
         if (isset($this->session->userdata['userData'])) {
-            redirect(base_url('task'));
+            redirect(base_url('Task'));
         }
 
         if ($this->session->has_userdata('invalidData')) {
@@ -86,7 +86,7 @@ class users extends CI_Controller {
 
             $this->session->set_flashdata('errorsSignUP', $errors);
             $this->session->set_flashdata('invalidData', $_POST);
-            redirect(base_url('users/signUp'));
+            redirect(base_url('Users/signUp'));
         } else {
 
             $word = $this->session->userdata('captchaWord');
@@ -96,7 +96,7 @@ class users extends CI_Controller {
                 $errors = 'invalide captcha';
 
                 $this->session->set_flashdata('errorsSignUP', $errors);
-                redirect(base_url('users/signUp'));
+                redirect(base_url('Users/signUp'));
             }
 
             $data = array(
@@ -109,18 +109,18 @@ class users extends CI_Controller {
                 'profilePicture' => 'uploads/profileImge/defult.PNG'
             );
 
-            $id = $this->userModel->addUser($data);
+            $id = $this->UserModel->addUser($data);
             $data['id'] = $id;
             $this->session->set_userdata('userData', $data);
 
-            redirect(base_url('task'));
+            redirect(base_url('Task'));
         }
     }
 
     public function signIn() {
 
         if (isset($this->session->userdata['userData'])) {
-            redirect(base_url('task'));
+            redirect(base_url('Task'));
         }
 
         $data['errorsSignIn'] = $this->session->flashdata('errorsSignIn');
@@ -143,37 +143,39 @@ class users extends CI_Controller {
 
             $this->session->set_flashdata('errorsSignIn', $errors);
             $this->session->set_flashdata('invalidData', $_POST);
-            redirect(base_url('users/signIn'));
+            redirect(base_url('Users/signIn'));
         } else {
 
             $data = array(
                 'email' => $this->security->xss_clean($_POST['email']),
                 'password' => $this->security->xss_clean($_POST['password']),
             );
-            $data = $this->userModel->login($data);
+            $data = $this->UserModel->login($data);
             if ($data) {
-//                print_r($data[0]);
-//                exit();
+
                 $this->session->set_userdata('userData', $data[0]);
-                redirect(base_url('task'));
+
+
+                redirect(base_url('Task'));
             } else {
 
                 $this->session->set_flashdata('errorsLogin', 'invalid username or password');
-                redirect(base_url('users/signIn'));
+                redirect(base_url('Users/signIn'));
             }
         }
     }
 
     public function signOut() {
         $this->session->unset_userdata('userData');
-        redirect(base_url('users/signIn'));
+        redirect(base_url('Users/signIn'));
     }
 
     public function profile() {
 
         if (!isset($this->session->userdata['userData'])) {
-            redirect(base_url('users/signIn'));
+            redirect(base_url('Users/signIn'));
         }
+           
 
         $data['errorsProfile'] = $this->session->flashdata('errorsProfile');
         $data['updated'] = $this->session->flashdata('updated');
@@ -184,6 +186,7 @@ class users extends CI_Controller {
     }
 
     public function updateProfile() {
+            
 
 //      start
         $this->form_validation->set_rules('password', 'password', 'required|matches[conpassword]');
@@ -195,7 +198,7 @@ class users extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $errors = validation_errors();
             $this->session->set_flashdata('errorsProfile', $errors);
-            redirect(base_url('users/profile'));
+            redirect(base_url('Users/profile'));
         } else {
 
             if (!empty($_FILES['pic']['name'])) {
@@ -211,27 +214,26 @@ class users extends CI_Controller {
                     $errors = array('error' => $this->upload->display_errors());
                     $this->session->set_flashdata('errorsProfile', $errors['error']);
 
-                    $pic = $this->userModel->getUserpic($_POST['email']);
+                    $pic = $this->UserModel->getUserpic($_POST['email']);
                     $_POST['profilePicture'] = $pic[0]['profilePicture'];
                 } else {
                     $data = array('upload_data' => $this->upload->data());
                     $_POST['profilePicture'] = 'uploads/profileImge/' . $data['upload_data']['file_name'];
                 }
             } else {
-                $pic = $this->userModel->getUserpic($_POST['email']);
+                $pic = $this->UserModel->getUserpic($_POST['email']);
                 $_POST['profilePicture'] = $pic[0]['profilePicture'];
             }
 
             unset($_POST['conpassword']);
             unset($_POST['update']);
 
-            $this->userModel->updateProfile($_POST);
+            $this->UserModel->updateProfile($_POST);
+            $_POST['id'] = $this->session->userdata('userData')['id'];
             $this->session->set_userdata('userData', $_POST);
             $this->session->set_flashdata('updated', 'updated succes');
-            redirect(base_url('users/profile'));
+            redirect(base_url('Users/profile'));
         }
     }
 
 }
-
-?>

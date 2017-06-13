@@ -62,7 +62,7 @@ if (!empty($errorsProfile)) {
 
 
                                     <div style="padding:30px 0px 10px 50px ; line-height:44px">
-                                        <button type="submit" name="update" formaction="<?= base_url('users/updateProfile'); ?>" value="" class="btn btn-srch btn-profile btn-profile-save"  style="margin-right:50px"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Save Sitting</button>
+                                        <button type="submit" name="update" formaction="<?= base_url('Users/updateProfile'); ?>" value="" class="btn btn-srch btn-profile btn-profile-save"  style="margin-right:50px"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Save Sitting</button>
                                     </div>
                                 </div>
 

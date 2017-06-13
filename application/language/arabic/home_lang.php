@@ -122,5 +122,10 @@ $lang['Country']=' البلد ';
 $lang['police']=' يرجى الموافقة على سياستنا ';
 $lang['type']=' اكتب هنا .. ';
 
+//===========================
+//switch lang dropdown from navbar
+
+$lang['word'] = 'Arabic';
+$lang['image'] = 'assets/img/arabic.jpg';
 
 ?>
