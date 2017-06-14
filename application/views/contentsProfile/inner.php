@@ -1,3 +1,5 @@
+<?php $path =  basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); ?>
+
 
 <!--
 start side bar
@@ -16,11 +18,10 @@ start side bar
             </form> 
 
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="<?= base_url('task/mustDo'); ?>"><i class="fa fa-table"></i>Must Do</a></li>
-                <li ><a href="<?= base_url('task/done'); ?>" ><i class="fa fa-check-square-o"></i>Done</a></li>
-                <li ><a href="<?= base_url('task/trash'); ?>" ><i class="fa fa-trash-o"></i>in Trash</a></li>
+                <li class="<?php if($path == 'mustDo') echo 'active' ?>"><a href="<?= base_url('task/mustDo'); ?>"><i class="fa fa-table"></i>Must Do</a></li>
+                <li class="<?php if($path == 'done') echo 'active' ?>"><a href="<?= base_url('task/done'); ?>" ><i class="fa fa-check-square-o"></i>Done</a></li>
+                <li class="<?php if($path == 'trash') echo 'active' ?>"><a href="<?= base_url('task/trash'); ?>" ><i class="fa fa-trash-o"></i>in Trash</a></li>
             </ul>
-
 
 
             <div class="ftr T-FOOTER text-center">

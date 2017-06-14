@@ -23,8 +23,9 @@ if (!empty($errorsProfile)) {
                         <div class="row">
                             <form method="post" enctype="multipart/form-data">
 
-                                <div class="col-xs-12 col-sm-4 pull-right text-center">
-                                    <img src="<?= base_url($user['profilePicture']); ?>" alt="profil-img" class="img-responsive center-block" />
+                                <div class="col-xs-12 col-sm-4 col-lg-3 pull-right text-center photo-block">
+                                    <img src="<?= base_url('assets/img/ribbon2.png'); ?>" alt="profil-img" class="img-responsive center-block ribbon2" />
+                                    <img src="<?= base_url($user['profilePicture']); ?>" alt="profil-img" class="img-responsive center-block prof-pic" />
                                     <input type="file"  id="file" class="inputfile" name="pic" />
                                     <label for="file" class="btn btn-srch btn-profile"> <i class='fa fa-sliders' aria-hidden='true'></i> Change Your Picture</label>
                                 </div>

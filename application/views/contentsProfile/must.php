@@ -1,3 +1,10 @@
+<style type="text/css">
+    .slider.slider-horizontal {
+        width:100%;
+    }
+</style>
+
+
 <script type="text/javascript">
     function range() {
         var x = document.getElementById("myRange").value;
@@ -15,7 +22,7 @@
         <h4 style="font-weight: bold;">Create new Card</h4>
     </div>
 
-    <!-------------------------------start cards--------------------------------->
+    <!--start cards -->
     <?php if (is_array($cards) || is_object($cards)) { ?>
 
         <?php foreach ($cards as $card) { ?>
@@ -47,32 +54,34 @@
     <?php } ?>
 </div>
 
-<!-------------------------------end cards--------------------------------->
+<!--end cards -->
 
 
-<!----------------------------- Modal create card ------------------------------------------->
+<!-- Modal create card -->
 <div class="modal fade" id="createCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="createCard">
             <form name="newCart" action="<?= base_url('task/addCart') ?>" method="POST" enctype="multipart/form-data">
                 <!--start from here to send date through form--> 
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: xx-large;"><span aria-hidden="true">&times;</span></button>
                     <div class="row">
                         <div class="col-sm-3"><h4 style="margin-top : 20px;" class="modal-title" id="myModalLabel">Create new Card</h4></div>
-                        <div class="col-sm-9"><input type="text" name="title" class="form-control" ></div>
-
+                        <div class="col-sm-4"><input type="text" name="title" class="form-control" placeholder="name of card"></div>
                     </div>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="color: white; background-image: linear-gradient(to top, #2f4154 0%, #1abc9c 100%); background-attachment: fixed; background-repeat: no-repeat;">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="row">
                                 <div class="col-sm-3"><h3 style="margin-top:5px;">Due Date</h3></div>
-                                <div class="col-sm-9" ><input type="date" name="mydate" class="form-control" ></div>
+                                <div class="col-sm-9 input-group" >
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    <input type="date" name="mydate" class="form-control" >
+                                </div>
                             </div>
-                            <h3>Description <small>general</small></h3>
-                            <div class="well well-lg">
+                            <h3>Description <small style="color: bisque;">general</small></h3>
+                            <div class="well well-lg" style=" background-image: linear-gradient(-225deg, #1abc9c 50%, #2f4154 50%);">
                                 <div class="main">
                                     <!-- <a href="#" class="btn btn-prima pull-right edit">edit</a>  -->
                                     <h4>Main</h4>
@@ -83,9 +92,15 @@
 
                                 <h4>Illustrating Images</h4>
                                 <!-- <form action="" method="" > -->
-                                <div class="input-group space">
-                                    <input type="file" name="image" class="form-control" aria-label="...">
-
+                                <div class="input-group space" style="margin: 0px auto;">
+                                    <input id="file-upload" type="file" name="image" class="input-hidden" aria-label="...">
+                                    <label for="file-upload" class="form-control drag-drop-label">
+                                        Select a file to upload
+                                        <br />OR
+                                        <br />Drag a file into this box
+                                        
+                                        <br /><br /><span id="file-upload-btn" class="button">Add a file</span>
+                                    </label>
                                 </div>
 
 
@@ -105,14 +120,14 @@
         </div>
     </div>
 </div>
-<!------------------------- end of modal create card --------------------------->
+<!--- end of modal create card -->
 
 
 
-<!----------------------------- Modal update card ------------------------------------------->
-<?php if (is_array($cards) || is_object($cards)) { ?>
+<!-- Modal update card -->
+<?php if (is_array($cards) || is_object($cards)) { 
 
-    <?php foreach ($cards as $card) { ?>
+     foreach ($cards as $card) { ?>
 
         <div class="modal fade" id="<?= 'updateModal' . $card['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -120,29 +135,33 @@
                     <form name="newCart" action="<?= base_url('task/updateCard/') . $card['id'] ?>" method="POST" enctype="multipart/form-data">
                         <!--start from here to send date through form--> 
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: xx-large;"><span aria-hidden="true">&times;</span></button>
                             <div class="row">
                                 <div class="col-sm-3"><h4 style="margin-top : 20px;" class="modal-title" id="myModalLabel"> Card Title</h4></div>
-                                <div class="col-sm-9"><input type="text" name="title" class="form-control" value="<?= $card['title']; ?>" ></div>
+                                <div class="col-sm-4"><input type="text" name="title" class="form-control" value="<?= $card['title']; ?>" ></div>
 
                             </div>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" style="color:white; background-image: linear-gradient(to top, #2f4154 0%, #1abc9c 100%); background-attachment: fixed; background-repeat: no-repeat;">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="row">
                                         <div class="col-sm-3"><h3 style="margin-top:5px;">Due Date</h3></div>
-                                        <div class="col-sm-9" ><input type="date" name="date" class="form-control" ></div>
+                                        <div class="col-sm-9 input-group" >
+                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            <input type="date" name="date" class="form-control" >
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-3"><h3 style="margin-top:5px;">finished</h3></div>
-                                        <div class="col-sm-9" ><input onclick="range()" name="Frange" type="range" id="myRange" value="<?= $card['Frange']; ?>"/>
-                                            <div id="demo"></div>
+                                        <div class="col-sm-3"><h3 style="margin-top:5px;">Task Progress</h3></div>
+                                        <div class="col-sm-9" >
+                                            
+                                            <input id="ex14" type="text" data-slider-ticks="[0, 25, 50, 75, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["0%", "25%", "50%", "75%", "100%"]' ticks_positions="[0, 25, 50, 75, 100]" />
                                         </div>
                                     </div>
 
-                                    <h3>Description <small>general</small></h3>
-                                    <div class="well well-lg">
+                                    <h3>Description <small style="color: bisque;">general</small></h3>
+                                    <div class="well well-lg" style="background-image: linear-gradient(-120deg, #1abc9c 50%, #2f4154 50%);">
                                         <div class="main">
                                             <!-- <a href="#" class="btn btn-prima pull-right edit">edit</a>  -->
                                             <h4>Main</h4>
@@ -177,7 +196,7 @@
     }
 }
 ?>
-<!------------------------- end of modal update card --------------------------->
+<!-- end of modal update card -->
 
 
 <script>
@@ -196,4 +215,5 @@
         scale: 'logarithmic',
         step: 10
     });
+});
 </script>
