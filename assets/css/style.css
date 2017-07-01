@@ -654,10 +654,10 @@ aside.pushmenu-open { left: 0px; bottom: 0; top: 51px;}
     border-radius: 3px;
     color: white;
     display: inline-block;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: bolder;
     letter-spacing: 0.02em;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
     text-decoration: none;

@@ -16,7 +16,7 @@ class Task extends CI_Controller {
 
 
         //call function that get card here
-$cards = $this->TaskModel->getTasks('must', $this->session->userdata['userData']['id']);
+        $cards = $this->TaskModel->getTasks('must', $this->session->userdata['userData']['id']);
 
         $data['cards'] = $cards;
 
@@ -84,7 +84,7 @@ $cards = $this->TaskModel->getTasks('must', $this->session->userdata['userData']
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
             $config['upload_path'] = './uploads/Attachment_Images';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'jpg|png';
             $this->upload->initialize($config);
 
             if ($this->upload->do_upload('image')) {
@@ -93,7 +93,7 @@ $cards = $this->TaskModel->getTasks('must', $this->session->userdata['userData']
             }
         }
 
-        
+
         $data = array(
             'idUser' => $this->session->userdata['userData']['id'],
             'Description' => $this->security->xss_clean($_POST['desc']),

@@ -15,3 +15,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css">
 
 
+<script type="text/javascript" src="<?= base_url('assets/js/jquery-1.12.0.min.js'); ?>"></script>
+
+<script type="text/javascript" src="<?= base_url('assets/js/bootstrap-slider.min.js'); ?>"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>

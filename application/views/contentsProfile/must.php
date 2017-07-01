@@ -4,7 +4,6 @@
     }
 </style>
 
-
 <script type="text/javascript">
     function range() {
         var x = document.getElementById("myRange").value;
@@ -95,11 +94,12 @@
                                 <div class="input-group space" style="margin: 0px auto;">
                                     <input id="file-upload" type="file" name="image" class="input-hidden" aria-label="...">
                                     <label for="file-upload" class="form-control drag-drop-label">
-                                        Select a file to upload
+                                        Select a Image to Upload
                                         <br />OR
-                                        <br />Drag a file into this box
-                                        
-                                        <br /><br /><span id="file-upload-btn" class="button">Add a file</span>
+                                        <br />Drag a Image into this box
+                                        <br />Allow [ jpg ,  png ] onlly !!
+
+                                        <br /><br /><span id="file-upload-btn" class="button">Add a Image</span>
                                     </label>
                                 </div>
 
@@ -125,9 +125,11 @@
 
 
 <!-- Modal update card -->
-<?php if (is_array($cards) || is_object($cards)) { 
+<?php
+if (is_array($cards) || is_object($cards)) {
 
-     foreach ($cards as $card) { ?>
+    foreach ($cards as $card) {
+        ?>
 
         <div class="modal fade" id="<?= 'updateModal' . $card['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-lg" role="document">
@@ -149,17 +151,16 @@
                                         <div class="col-sm-3"><h3 style="margin-top:5px;">Due Date</h3></div>
                                         <div class="col-sm-9 input-group" >
                                             <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                            <input type="date" name="date" class="form-control" >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3"><h3 style="margin-top:5px;">Task Progress</h3></div>
-                                        <div class="col-sm-9" >
-                                            
-                                            <input id="ex14" type="text" data-slider-ticks="[0, 25, 50, 75, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["0%", "25%", "50%", "75%", "100%"]' ticks_positions="[0, 25, 50, 75, 100]" />
+                                            <input type="date" name="date" class="form-control"  value="<?= $card['date'] ?>">
                                         </div>
                                     </div>
 
+                                    <div class="row">
+                                        <div class="col-sm-3"><h3 style="margin-top:5px;">Task Progress</h3></div>
+                                        <div class="col-sm-9" >
+                                            <input name="Frange" data-slider-value="<?= $card['Frange']; ?>"  id="range-<?= $card['id'] ?>" type="text" data-slider-ticks="[0, 25, 50, 75, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["0%", "25%", "50%", "75%", "100%"]' ticks_positions="[0, 25, 50, 75, 100]" />
+                                        </div>
+                                    </div> 
                                     <h3>Description <small style="color: bisque;">general</small></h3>
                                     <div class="well well-lg" style="background-image: linear-gradient(-120deg, #1abc9c 50%, #2f4154 50%);">
                                         <div class="main">
@@ -195,25 +196,22 @@
         <?php
     }
 }
+//print_r($cards);
 ?>
 <!-- end of modal update card -->
 
 
 <script>
-    // With JQuery
-    $("#ex15").slider({
-        min: 1000,
-        max: 10000000,
-        scale: 'logarithmic',
-        step: 10
-    });
 
-// Without JQuery
-    var slider = new Slider('#ex15', {
-        min: 1000,
-        max: 10000000,
-        scale: 'logarithmic',
-        step: 10
-    });
-});
+    var cards = <?php echo json_encode($cards) ?>;
+
+    for (i = 0; i < cards.length; i++) {
+        $("#range-" + cards[i]['id']).slider({
+            ticks: [0, 25, 50, 75, 100],
+            min: 1000,
+            max: 10000000,
+            scale: 'logarithmic',
+            step: 10
+        });
+    }
 </script>
