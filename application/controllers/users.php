@@ -48,7 +48,7 @@ class Users extends CI_Controller {
             'word_length' => 8,
             'font_size' => 96,
             'img_id' => 'Imageid',
-            'pool' => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'pool' => '01',
                 // White background and border, black text and red grid
 //            'colors' => array(
 //                'background' => array(255, 255, 255),
