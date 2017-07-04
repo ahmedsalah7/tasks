@@ -5,10 +5,10 @@
 </style>
 
 <script type="text/javascript">
-    function range() {
+    /*function range() {
         var x = document.getElementById("myRange").value;
         document.getElementById("demo").innerHTML = x + '%';
-    }
+    }*/
 </script>
 
 
@@ -158,7 +158,8 @@ if (is_array($cards) || is_object($cards)) {
                                     <div class="row">
                                         <div class="col-sm-3"><h3 style="margin-top:5px;">Task Progress</h3></div>
                                         <div class="col-sm-9" >
-                                            <input name="Frange" data-slider-value="<?= $card['Frange']; ?>"  id="range-<?= $card['id'] ?>" type="text" data-slider-ticks="[0, 25, 50, 75, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["0%", "25%", "50%", "75%", "100%"]' ticks_positions="[0, 25, 50, 75, 100]" />
+                                            <input name="Frange" id="ex14" type="text" data-slider-value="<?= $card['Frange']; ?>" data-slider-ticks="[0, 25, 50, 75, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["0%", "25%", "50%", "75%", "100%"]' ticks_positions="[0, 25, 50, 75, 100]" />
+                                            <!-- <input name="Frange" data-slider-value="<?= $card['Frange']; ?>"  id="range-<?= $card['id'] ?>" type="text" data-slider-ticks="[0, 25, 50, 75, 100]" data-slider-ticks-snap-bounds="50" data-slider-ticks-labels='["0%", "25%", "50%", "75%", "100%"]' ticks_positions="[0, 25, 50, 75, 100]" /> -->
                                         </div>
                                     </div> 
                                     <h3>Description <small style="color: bisque;">general</small></h3>

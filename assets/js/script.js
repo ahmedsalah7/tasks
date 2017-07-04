@@ -3,9 +3,19 @@ $(function () {
 });
 $(document).ready(function () {
 
-
     // With JQuery
     $("#ex14").slider({
+    ticks: [0, 25, 50, 75, 100],
+    ticks_positions: [0, 25, 50, 75, 100],
+    ticks_labels: ['0%', '25%', '50%', '75%', '100%'],
+    ticks_snap_bounds: 50,
+    formatter: function(value) {
+        return 'I‘v finshed: ' + value + '%';
+    }
+});
+
+    // With JQuery
+    /*$("#ex14").slider({
         ticks: [0, 25, 50, 75, 100],
         ticks_positions: [0, 25, 50, 75, 100],
         ticks_labels: ['0%', '25%', '50%', '75%', '100%'],
@@ -13,7 +23,7 @@ $(document).ready(function () {
         formatter: function(value) {
         return 'I‘v finshed: ' + value + '%';
     }
-    });
+    });*/
     /*$("#myRange").click(function(){
     var x = $("#myRange").value;
     $("#demo").innerHTML = x;
